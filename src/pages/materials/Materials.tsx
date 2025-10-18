@@ -12,7 +12,7 @@ import { analyzeStudyMaterial } from "../../lib/services/analysisService";
 export default function Materials() {
   const [selectedSubjectId, setSelectedSubjectId] = useState("");
   const [analyzing, setAnalyzing] = useState(false);
-  const [analyzingId, setAnalyzingId] = useState<string | null>(null);
+  // const [analyzingId, setAnalyzingId] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [refreshKey, setRefreshKey] = useState(0);
@@ -23,7 +23,7 @@ export default function Materials() {
       setError("");
       setSuccess("");
       setAnalyzing(true);
-      setAnalyzingId(materialId);
+      // setAnalyzingId(materialId);
 
       // Fetch material and subject details
       const { data: material, error: materialError } = await supabase
@@ -64,7 +64,7 @@ export default function Materials() {
       );
     } finally {
       setAnalyzing(false);
-      setAnalyzingId(null);
+      // setAnalyzingId(null);
     }
   };
 
